@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.theone.dynamicwallpaper">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".ui.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.MainActivity">
+
+        </activity>
+        <activity android:name=".ui.SettingActivity" />
+        <activity android:name=".ui.HelpActivity" />
+        <activity android:name=".ui.AboutActivity" />
+        <activity android:name=".ui.MemorialActivity" />
+        <activity
+            android:name=".ui.DownloadActivity"
+            android:launchMode="singleTask" />
+
+        <activity-alias
+            android:name=".ShareActivity"
+            android:icon="@mipmap/ic_launcher"
+            android:label="动态壁纸"
+            android:targetActivity=".ui.DownloadActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.SEND" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- 配置实时壁纸Service -->
+        <service
+            android:name=".service.VideoLiveWallpaper"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_WALLPAPER"
+            android:process=":wallpaper">
+
+            <!-- 为实时壁纸配置intent-filter -->
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+            <!-- 为实时壁纸配置meta-data -->
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/livewallpaper" />
+        </service>
+        <!-- 配置实时壁纸Service -->
+        <service
+            android:name=".service.VideoLiveWallpaper2"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_WALLPAPER"
+            android:process=":wallpaper">
+
+            <!-- 为实时壁纸配置intent-filter -->
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+            <!-- 为实时壁纸配置meta-data -->
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/livewallpaper" />
+        </service>
+
+        <receiver android:name=".service.Memorial">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/my_app_widget_info" />
+        </receiver>
+
+        <service
+            android:name=".service.DownloadService"
+            android:enabled="true"
+            android:exported="true"/>
+    </application>
+
+</manifest>

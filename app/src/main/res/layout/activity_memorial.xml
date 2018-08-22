@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true">
+        <com.theone.dynamicwallpaper.view.CircleImageView
+            android:id="@+id/icon1"
+            android:layout_width="@dimen/memorial_image_size"
+            android:layout_height="@dimen/memorial_image_size"
+            android:src="@drawable/icon1" />
+
+        <com.theone.dynamicwallpaper.view.CircleImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@id/center_layout"
+            android:src="@drawable/heart" />
+
+        <com.theone.dynamicwallpaper.view.CircleImageView
+            android:id="@+id/icon2"
+            android:layout_width="@dimen/memorial_image_size"
+            android:layout_height="@dimen/memorial_image_size"
+            android:src="@drawable/icon2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:text="2016-7-2"/>
+            <TextView
+                android:id="@+id/tv_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_gravity="center_horizontal"
+                android:textSize="17sp"
+                android:text="已相恋"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/qmui_config_color_white"
+            android:layout_height="@dimen/topbar_height">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mz_titlebar_ic_back_dark"
+                android:layout_centerVertical="true"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="设置"
+                android:layout_centerInParent="true"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:enabled="false"
+                android:textColor="@color/finish_text_color"
+                android:textSize="15sp"
+                android:text="完成"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EEE" />
+    </LinearLayout>
+
+</RelativeLayout>

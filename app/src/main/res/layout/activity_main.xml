@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.theone.dynamicwallpaper.ui.MainActivity">
+
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topbar_height" >
+
+        <com.ogaclejapan.smarttablayout.SmartTabLayout
+            xmlns:tab="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tab_list"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#ffffff"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            tab:stl_clickable="true"
+            tab:stl_defaultTabBackground="@android:color/transparent"
+            tab:stl_defaultTabTextAllCaps="false"
+            tab:stl_defaultTabTextColor="@color/tab_text_selector"
+            android:layout_marginBottom="1dp"
+            tab:stl_defaultTabTextHorizontalPadding="12dp"
+            tab:stl_defaultTabTextMinWidth="0dp"
+            tab:stl_defaultTabTextSize="14dp"
+            tab:stl_distributeEvenly="false"
+            tab:stl_dividerColor="#00000000"
+            tab:stl_dividerThickness="0dp"
+            tab:stl_drawDecorationAfterTab="false"
+            tab:stl_indicatorColor="#ff5c5c"
+            tab:stl_indicatorCornerRadius="0dp"
+            tab:stl_indicatorGravity="bottom"
+            tab:stl_indicatorInFront="false"
+            tab:stl_indicatorInterpolation="smart"
+            tab:stl_indicatorThickness="2dp"
+            tab:stl_indicatorWidth="auto"
+            tab:stl_indicatorWithoutPadding="false"
+            tab:stl_overlineColor="#4D000000"
+            tab:stl_overlineThickness="0dp"
+            tab:stl_underlineColor="#00000000"
+            tab:stl_underlineThickness="1dp" />
+    </com.qmuiteam.qmui.widget.QMUITopBar>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_bar"/>
+
+    <TextView
+        android:id="@+id/tv_no_permission"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_below="@id/top_bar"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:text="读写权限被禁止，请手动打开"/>
+</RelativeLayout>

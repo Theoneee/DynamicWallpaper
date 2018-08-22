@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.qmuiteam.qmui.widget.pullRefreshLayout.QMUIPullRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp">
+    <!--<lib.homhomlib.design.SlidingLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+        <!--android:id="@+id/slidingLayout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:sliding_mode="both"-->
+        <!--app:background_view="@layout/sliding_bg_layout">-->
+        <GridView
+            android:id="@+id/gridview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/qmui_config_color_75_white"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:horizontalSpacing="3dp"
+            android:verticalSpacing="3dp"/>
+    <!--</lib.homhomlib.design.SlidingLayout>-->
+    </com.qmuiteam.qmui.widget.pullRefreshLayout.QMUIPullRefreshLayout>
+    <com.qmuiteam.qmui.widget.QMUIEmptyView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+</RelativeLayout>
+

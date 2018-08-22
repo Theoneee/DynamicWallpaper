@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/icon1"
+        android:layout_width="@dimen/memorial_image_size"
+        android:layout_height="@dimen/memorial_image_size"
+        android:src="@drawable/icon1" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@id/center_layout"
+        android:src="@drawable/heart" />
+
+    <ImageView
+        android:id="@+id/icon2"
+        android:layout_width="@dimen/memorial_image_size"
+        android:layout_height="@dimen/memorial_image_size"
+        android:src="@drawable/icon2" />
+
+    <LinearLayout
+        android:id="@+id/center_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/appwidget_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/qmui_config_color_white"
+            tools:text="111"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/qmui_config_color_white"
+            android:layout_marginTop="5dp"
+            tools:text="123"
+            android:textSize="@dimen/memorial_text_size" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

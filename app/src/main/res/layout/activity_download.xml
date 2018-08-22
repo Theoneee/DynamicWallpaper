@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/top_layout"/>
+
+    <com.qmuiteam.qmui.widget.QMUIEmptyView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/download_ing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:visibility="gone"
+        android:paddingBottom="5dp"
+        android:textColor="@color/gray_color"
+        android:text="正在下载"
+        android:textSize="12sp"
+        android:background="@color/divider_color"/>
+
+    <include layout="@layout/item_download"/>
+
+    <TextView
+        android:id="@+id/download_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="5dp"
+        android:visibility="gone"
+        android:textColor="@color/gray_color"
+        android:text="已下载"
+        android:textSize="12sp"
+        android:background="@color/divider_color"/>
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+</LinearLayout>

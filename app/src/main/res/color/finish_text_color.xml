@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/qmui_config_color_blue" android:state_enabled="true" />
+    <item android:color="@color/gray_color" android:state_enabled="false" />
+    <item android:color="@color/gray_color" android:state_pressed="true" />
+    <item android:color="@color/qmui_config_color_blue" android:state_pressed="false" />
+</selector>

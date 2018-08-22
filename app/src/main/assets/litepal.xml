@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal >
+    <dbname value="Wallpaper"/>   <!-- 数据库的名字 -->
+    <version value="2"/>  <!-- 数据库的版本号 -->
+
+    <list>
+        <!-- 配置模型类 -->
+        <mapping class="com.theone.dynamicwallpaper.bean.Video"/>
+        <mapping class="com.theone.dynamicwallpaper.bean.Download"/>
+    </list>
+</litepal>

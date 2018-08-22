@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/icon_transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/out_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/qmui_config_color_75_white"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_all"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/qmui_config_color_gray_4"
+                android:textSize="16sp"
+                android:text="全部"/>
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textColor="@color/qmui_config_color_50_blue"
+                android:textSize="16sp"
+                android:text="确定"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+
+        <com.theone.dynamicwallpaper.view.wheelview.WheelView
+            android:id="@+id/wheel_min"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            app:lineColor="@color/qmui_config_color_gray_5"
+            app:itemVisibleNum="4"
+            app:textColorOuter="@color/qmui_config_color_gray_4"
+            app:textSizeOuter="16sp"
+            app:textColorCenter="@color/qmui_config_color_red"
+            app:textSizeCenter="19sp"
+            app:isLoop="false"
+            app:lineSpaceingDimens="5dp"
+            app:wheelGravity="center"
+            />
+
+        <com.theone.dynamicwallpaper.view.wheelview.WheelView
+            android:id="@+id/wheel_max"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            app:lineColor="@color/qmui_config_color_gray_5"
+            app:itemVisibleNum="4"
+            app:textColorOuter="@color/qmui_config_color_gray_4"
+            app:textSizeOuter="16sp"
+            app:textColorCenter="@color/qmui_config_color_red"
+            app:textSizeCenter="19sp"
+            app:isLoop="false"
+            app:lineSpaceingDimens="5dp"
+            app:wheelGravity="center"
+            />
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
