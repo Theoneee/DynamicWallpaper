@@ -10,6 +10,11 @@ https://blog.csdn.net/lmj623565791/article/details/72170299
 抖音分享下载无水印视频：
 https://github.com/fly-studio/douyin-downloader
 
+图片选择器（这个在彩蛋里）：
+
+https://github.com/LuckSiege/PictureSelector
+
+
 使用到：
 QMUI，LitePal等。
 
