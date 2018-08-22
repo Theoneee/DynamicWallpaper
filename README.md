@@ -1,8 +1,13 @@
 # DynamicWallpaper
 
 使用本地视频作为动态壁纸
-参照大神鸿洋博客里的方法，自己进行了改进。
+
+# 参考资料：
+
+设置壁纸：
 https://blog.csdn.net/lmj623565791/article/details/72170299
+抖音分享下载无水印视频：
+https://github.com/fly-studio/douyin-downloader
 
 # Demo下载：
 
