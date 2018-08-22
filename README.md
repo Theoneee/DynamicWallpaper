@@ -1,8 +1,8 @@
-# DynamicWallpaper
+## DynamicWallpaper
 
 使用本地视频作为动态壁纸
 
-# 参考资料：
+### 参考资料：
 
 设置壁纸：
 
@@ -23,12 +23,12 @@ QMUI，LitePal等。
 
 图标来自Flyme
 
-# Demo下载：
+### Demo下载：
 
-![apk](https://github.com/theoneee/DynamicWallpaper/raw/master/resource/wallpaper_release_1.3.0.apk)
+[apk](https://github.com/theoneee/DynamicWallpaper/raw/master/resource/wallpaper_release_1.3.0.apk)
 
 
-# 效果图：
+### 效果图：
 
 ![image](https://github.com/theoneee/DynamicWallpaper/raw/master/resource/preview1.jpg)
 ![image](https://github.com/theoneee/DynamicWallpaper/raw/master/resource/preview2.jpg)
