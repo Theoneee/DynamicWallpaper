@@ -6,8 +6,14 @@
 
 设置壁纸：
 https://blog.csdn.net/lmj623565791/article/details/72170299
+
 抖音分享下载无水印视频：
 https://github.com/fly-studio/douyin-downloader
+
+使用到：
+QMUI，LitePal等。
+
+图标来自Flyme
 
 # Demo下载：
 
