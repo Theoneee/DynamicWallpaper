@@ -3,7 +3,7 @@
 
 效果图：
 
-![image](http://github.com/theoneee/DynamicWallpaper/resource/preview_1.jpg)
+![image](http://github.com/theoneee/DynamicWallpaper/raw/master/resource/preview_1.jpg)
 
 动态壁纸设置参照大神鸿洋博客里的方法，自己进行了改进。
 
