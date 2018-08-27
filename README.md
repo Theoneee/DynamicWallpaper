@@ -23,7 +23,7 @@ QMUI，LitePal等。
 
 图标来自Flyme
 
-### Demo下载：
+### [Demo下载](https://github.com/theoneee/DynamicWallpaper/raw/master/resource/wallpaper_release_1.3.0.apk)
 
 [apk](https://github.com/theoneee/DynamicWallpaper/raw/master/resource/wallpaper_release_1.3.0.apk)
 
