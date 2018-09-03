@@ -23,7 +23,7 @@ https://github.com/LuckSiege/PictureSelector
 
 图标来自Flyme
 
-### [Demo下载](https://github.com/theoneee/DynamicWallpaper/raw/master/resource/wallpaper_release_1.3.0.apk)
+### [APK下载](https://github.com/theoneee/DynamicWallpaper/raw/master/resource/wallpaper_release_1.3.0.apk)
 
 
 ### 效果图：
