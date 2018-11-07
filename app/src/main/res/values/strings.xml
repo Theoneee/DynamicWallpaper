@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">动态壁纸</string>
-    
+
     <string name="contact">QQ群：583882583</string>
 
     <string name="duration_all">全部</string>
@@ -19,7 +19,8 @@
     <string name="help_get_video1">在各个小视频APP里有许多人发布的动态视频，
         都是很好的动态壁纸来源，但是直接下载的都是有水印的，下面教一种无水印方法。
         \n如果是抖音：
-        \n点击分享->更多分享->动态壁纸->下载完成
+        \n抖音现在不向第三方分享了，现在的方法是：
+        \n点击分享->复制链接->打开此APP->设置->视频下载
         \n其他视频：
         \n点击分享->复制链接 \n浏览器中输入下面网址： \nhttp://douyin.iiilab.com
          \n如下图所示：

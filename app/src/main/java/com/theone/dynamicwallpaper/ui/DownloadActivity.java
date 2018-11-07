@@ -2,6 +2,8 @@ package com.theone.dynamicwallpaper.ui;
 
 import android.annotation.TargetApi;
 import android.content.BroadcastReceiver;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -11,6 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.ImageView;
@@ -24,7 +27,6 @@ import com.theone.dynamicwallpaper.R;
 import com.theone.dynamicwallpaper.adapter.DownloadAdapter;
 import com.theone.dynamicwallpaper.base.BaseActivity;
 import com.theone.dynamicwallpaper.bean.Download;
-import com.theone.dynamicwallpaper.bean.Recv;
 import com.theone.dynamicwallpaper.downdload.AnalyzerTask;
 import com.theone.dynamicwallpaper.downdload.model.Video;
 import com.theone.dynamicwallpaper.service.DownloadService;
@@ -53,6 +55,9 @@ import butterknife.OnClick;
  * @remark
  */
 public class DownloadActivity extends BaseActivity implements AnalyzerTask.AnalyzeListener {
+
+
+    private static final String TAG = "DownloadActivity";
 
     @BindView(R.id.title)
     TextView title;
@@ -93,13 +98,14 @@ public class DownloadActivity extends BaseActivity implements AnalyzerTask.Analy
         setContentView(R.layout.activity_download);
         ButterKnife.bind(this);
         initView();
-        getData(getIntent());
+//        getData(getIntent());
         initFilter();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        getData();
         registerReceiver(mReceiver, filter);
     }
 
@@ -111,6 +117,7 @@ public class DownloadActivity extends BaseActivity implements AnalyzerTask.Analy
         filter.addAction(DownloadService.UPDATE_PROGRESS);
         filter.addAction(DownloadService.UPDATE_PROGRESS_CURRENT);
         filter.addAction(DownloadService.UPDATE_PROGRESS_TOTAL);
+
     }
 
     /**
@@ -189,23 +196,46 @@ public class DownloadActivity extends BaseActivity implements AnalyzerTask.Analy
         return isDown;
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        getData(intent);
-    }
+//    @Override
+//    protected void onNewIntent(Intent intent) {
+//        super.onNewIntent(intent);
+//        getData(intent);
+//    }
+//
+//    private void getData(Intent intent) {
+//        if (isDowning) {
+//            ToastUtils.showToast(this, "等待当前视频下载结束");
+//            return;
+//        }
+//        Recv recv = new Recv(intent);
+//        if (recv.isActionSend()) {
+//            loading.show();
+//            AnalyzerTask analyzerTask = new AnalyzerTask(this, this);
+//            analyzerTask.execute(recv.getContent());
+//        }
+//    }
 
-    private void getData(Intent intent) {
+    ClipboardManager clipboard;
+
+    private void getData() {
+        String content = "";
+        // 获取系统剪贴板
+        if (null == clipboard)
+            clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        // 获取剪贴板的剪贴数据集
+        ClipData clipData = clipboard.getPrimaryClip();
+        if (clipData != null && clipData.getItemCount() > 0) {
+            // 从数据集中获取（粘贴）第一条文本数据
+            content = clipData.getItemAt(0).getText().toString();
+            Log.e(TAG, "getData:  content = "+content );
+        }
         if (isDowning) {
             ToastUtils.showToast(this, "等待当前视频下载结束");
             return;
         }
-        Recv recv = new Recv(intent);
-        if (recv.isActionSend()) {
-            loading.show();
-            AnalyzerTask analyzerTask = new AnalyzerTask(this, this);
-            analyzerTask.execute(recv.getContent());
-        }
+        loading.show();
+        AnalyzerTask analyzerTask = new AnalyzerTask(this, this);
+        analyzerTask.execute(content);
     }
 
     @OnClick(R.id.iv_back)

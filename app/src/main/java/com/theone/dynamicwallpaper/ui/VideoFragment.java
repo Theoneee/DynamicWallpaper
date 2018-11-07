@@ -87,6 +87,7 @@ public class VideoFragment extends Fragment implements AdapterView.OnItemLongCli
         emptyView = view.findViewById(R.id.empty_view);
         refreshLayout = view.findViewById(R.id.refresh_layout);
         mainActivity = (MainActivity) getActivity();
+        //  当为 "全部" 时，才能进行下拉刷新
         if (TYPE == 0)
             refreshLayout.setEnabled(true);
         else
@@ -174,11 +175,14 @@ public class VideoFragment extends Fragment implements AdapterView.OnItemLongCli
 
     private void showLongClickDialog(final int position) {
         String[] strings;
+        // 当为喜欢列表或者全部列表、历史列表选择的视频已经标记为喜欢时，不显示 “添加到喜欢”操作
+        // TYPE == 2 这个条件可以去掉，为了避免每次判断时都要 get()，所以加入此条件
         if (TYPE == 2 || videos.get(position).isLike()) {
             strings = itmes2;
         } else {
             strings = itmes;
         }
+        // 为了下面的switch操作，特意将 添加到喜欢 放到第三个，这样就可以使用一个switch
         QMUIDialogUtils.showMenuDialog(getActivity(), strings, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -214,6 +218,10 @@ public class VideoFragment extends Fragment implements AdapterView.OnItemLongCli
         });
     }
 
+    /**
+     * 移除视频，不显示在列表（不符合作为动态壁纸的视频可以进行此操作后让选择更少）
+     * @param video
+     */
     private void removeVideo(Video video) {
         switch (TYPE) {
             case 0:
@@ -314,7 +322,8 @@ public class VideoFragment extends Fragment implements AdapterView.OnItemLongCli
     }
 
     /**
-     * 判断是否已经存在于历史中
+     * 设置完壁纸后，判断当前设置的壁纸是否已经存在于历史中
+     * 如果历史中有，则要更新设置时间，让其排到第一位
      */
     private boolean isInHistory(Video video) {
         boolean isIn = false;
